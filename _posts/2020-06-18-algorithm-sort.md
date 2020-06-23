@@ -208,12 +208,8 @@ var merge = (left, right) => { // 3
     let sorted = [];
     let iLeft = 0, iRight = 0;
     while(iLeft < left.length && iRight < right.length) { // 4
-        if (left[iLeft] < right[iRight]){
-            sorted.push(left[iLeft++]);
-        }
-        else{
-             sorted.push(right[iRight++]);
-        }
+        (left[iLeft] < right[iRight]) ? 
+        sorted.push(left[iLeft++]) : sorted.push(right[iRight++]);
     }
     
     return [...sorted,...left.slice(iLeft),...right.slice(iRight)];
