@@ -2,7 +2,8 @@
 title: "[Javascript] 정렬 알고리즘"
 toc : true
 toc_label : "목차"
-category : ["algorithm", "javascript"]
+category : ["Algorithm"]
+tag : ["algorithm", "javascript"]
 ---
 
 정렬 알고리즘에 대한 기본 개념이 있는 상태에서 재학습을 하기 위해 정리한 내용으로,
