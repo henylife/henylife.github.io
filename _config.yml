@@ -60,7 +60,7 @@ algolia:
   search_only_api_key    : # YOUR_SEARCH_ONLY_API_KEY
   powered_by             : # true (default), false
 google:
-  search_engine_id       : # YOUR_SEARCH_ENGINE_ID
+  search_engine_id       : # UA-170889943-1
   instant_search         : # false (default), true
 # SEO Related
 google_site_verification :
@@ -87,7 +87,7 @@ social:
 analytics:
   provider               : false # false (default), "google", "google-universal", "custom"
   google:
-    tracking_id          :
+    tracking_id          : UA-170889943-1
     anonymize_ip         : # true, false (default)
 
 
@@ -96,7 +96,7 @@ author:
   name             : "HENY"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Personal blog by Heny"
-  location         : "Republic of Koea"
+  location         : "Republic of Korea"
   email            :
   links:
     - label: "Email"
