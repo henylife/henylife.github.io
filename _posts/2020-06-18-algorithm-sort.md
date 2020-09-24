@@ -1,13 +1,19 @@
 ---
-title: "[Javascript] 정렬 알고리즘"
-toc : true
-toc_label : "목차"
-category : ["Algorithm"]
-tag : ["algorithm", "javascript"]
+title: 기본 정렬 알고리즘 with Javascript
+toc: true
+toc_label: 목차
+category:
+- Algorithm
+tag:
+- algorithm
+- javascript
 ---
 
-정렬 알고리즘에 대한 기본 개념이 있는 상태에서 재학습을 하기 위해 정리한 내용으로,
-예제 코드는 [leetcode의 문제(오름차순 정렬)](https://leetcode.com/problems/sort-an-array)를 기반으로 작성되었다.
+정렬 알고리즘에 대한 기본 개념이 있는 상태에서 자바스크립트로 구현해보기 위해 정리한 문서로,
+거품·선택·삽입정렬과 퀵·합병정렬을 다룬다.
+
+예제 코드는 [leetcode의 문제(오름차순 정렬)](https://leetcode.com/problems/sort-an-array)를 기반으로 직접 구현했으며, 가독성이나 효율성이 떨어질 수 있다.
+
 
 <br>
 
@@ -29,7 +35,7 @@ var sortArray = function(nums) {
             }
         }
     }
-    
+
     return nums;
 };
 ```
