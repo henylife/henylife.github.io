@@ -1,5 +1,10 @@
 ---
 title: 이벤트 위임(Event Delegation)
+category:
+- javascript basics
+tag:
+- javascript
+toc: true
 ---
 
 # 이벤트 위임(Event Delegation)
