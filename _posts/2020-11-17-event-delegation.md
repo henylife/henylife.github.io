@@ -20,7 +20,7 @@ DOM 트리에 새로운 li 요소를 추가하더라도 이벤트 처리는 부�
 
 ## 동작 방법
 아래와 같은 메뉴가 있다고 생각하자.
-```
+```html
 <ul id="menu">
   <li><button id="save">저장</button></li>
   <li><button id="edit">편집</button></li>
@@ -29,7 +29,7 @@ DOM 트리에 새로운 li 요소를 추가하더라도 이벤트 처리는 부�
 ```
 
 각각의 기능을 클릭 시, 특정 동작을 하게 하려면 아래와 같이 이벤트를 등록할 수 있다.
-```
+```javascript
 document.getElementById("save").addEventListener("click", function(e) {
   // 저장 이벤트 동작
 });
@@ -43,7 +43,7 @@ document.getElementById("delete").addEventListener("click", function(e) {
 이때, 메뉴가 추가될 때마다 이벤트 핸들러는 하나씩 늘어날 것이다.
 
 하지만 이벤트 위임을 사용하면 상위 엘리먼트인 \<div id='menu'>에만 이벤트 리스너를 추가하면 된다.
-```
+```javascript
 document.getElementById("menu").addEventListener("click", function(e) {
   var target = e.target;
   if (target.id === "save") {
@@ -61,7 +61,7 @@ target은 이벤트가 발생한 엘리먼트를 반환하기 때문에 엘리�
 
 ### data 속성 활용
 여기서 **data-action을 사용**하면 아래와 같은 방법으로 작성할 수도 있다.
-```
+```html
 <ul id="menu">
   <li><button data-action="save">저장</button></li>
   <li><button data-action="edit">편집</button></li>
@@ -69,7 +69,7 @@ target은 이벤트가 발생한 엘리먼트를 반환하기 때문에 엘리�
 </ul>
 ```
 
-```
+```javascript
 class Menu {
     constructor(elem) {
       this._elem = elem;

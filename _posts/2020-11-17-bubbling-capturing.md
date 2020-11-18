@@ -17,7 +17,7 @@ toc: true
 
 아래의 예제를 보자.
 
-```
+```html
 <form onclick="alert('form')">FORM
   <div onclick="alert('div')">DIV
     <p onclick="alert('p')">P</p>
@@ -48,7 +48,7 @@ toc: true
 ## 버블링 중단
 ### event.stopPropagation()
 이벤트 객체의 메서드인 event.stopPropagation()를 사용하면, 핸들러에게 이벤트를 완전히 처리하고 난 후 버블링을 중단하도록 명령할 수 있다.
-```
+```html
 <body onclick="alert(`버블링은 여기까지 도달하지 못합니다.`)">
   <button onclick="event.stopPropagation()">클릭해 주세요.</button>
 </body>
@@ -82,7 +82,7 @@ document.addEventListener('click'…)의 코드를 추가했을 때, stopPropaga
 캡처링 단계를 이용해야 하는 경우는 흔치 않기 때문에, 간략하게 설명하고 넘어가겠다.
 
 캡처링 단계에서 이벤트를 잡아내려면 addEventListener의 capture 옵션을 true로 설정해야 한다.
-```
+```javascript
 elem.addEventListener(..., {capture: true})
 elem.addEventListener(..., true)
 ```

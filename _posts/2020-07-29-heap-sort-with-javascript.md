@@ -1,5 +1,5 @@
 ---
-title: 힙 정렬 알고리즘 with Javascript
+title: "[Javascript] 힙 정렬 알고리즘"
 toc: true
 toc_label: 목차
 category:
@@ -59,7 +59,7 @@ tag:
 
 ## 예제 코드
 
-```
+```javascript
 var sortArray = function(nums) { 
     if(nums.length < 2) return nums;
     
@@ -80,7 +80,7 @@ var sortArray = function(nums) {
     return nums;
 }
 
-var heap_sort = (nums, i, size) => {
+const heap_sort = (nums, i, size) => {
     let p = i;
     let left = i * 2 + 1;
 	let right = i * 2 + 2;

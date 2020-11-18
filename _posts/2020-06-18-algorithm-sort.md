@@ -1,5 +1,5 @@
 ---
-title: 기본 정렬 알고리즘 with Javascript
+title: "[Javascript] 기본 정렬 알고리즘"
 toc: true
 toc_label: 목차
 category:
@@ -26,7 +26,7 @@ Bubble Sort는 구현이 매우 간단하고 소스 코드가 직관적이지만
 시간복잡도가 좋은 퍼포먼스를 내지 못해서 실제로는 잘 사용되지 않는다.
 
 ## 예제 코드
-```
+```javascript
 var sortArray = function(nums) {
     for (let i = 0; i < nums.length; i++) { // 1
         for (let j = 1; j < nums.length-i; j++) {
@@ -37,7 +37,7 @@ var sortArray = function(nums) {
     }
 
     return nums;
-};
+}
 ```
 1. 정렬이 되어 제외될 원소의 갯수를 의미. 1회전이 끝난 후, 배열의 마지막 위치에는 가장 큰 원소가 위치하기 때문에 하나씩 증가시켜줌
 2. 현재 원소(j)와 바로 이전의 원소 값(j-1)을 비교
@@ -61,7 +61,7 @@ Bubble Sort는 정렬이 돼있던 안돼있던, 2개의 원소를 비교하기 
 Selection Sort는 정렬을 위한 비교 횟수는 많지만, Bubble Sort에 비해 실제로 교환하는 횟수는 적기 때문에 많은 교환이 일어나야 하는 자료상태에서 비교적 효율적이다.
 
 ## 예제 코드
-```
+```javascript
 var sortArray = function(nums) {
     let idxMin;
     for (let i = 0; i < nums.length-1; i++) { // 1
@@ -75,7 +75,7 @@ var sortArray = function(nums) {
     }
     
     return nums;
-};
+}
 ```
 1. 원소를 넣을 위치(i)를 선택 -> 배열의 첫 번째부터 차례로 진행
 2. i+1 원소부터 차례대로 값을 비교하여 자리에 오는 값을 찾음
@@ -101,7 +101,7 @@ Selection Sort의 시간복잡도는 (n-1) + (n-2) + (n-3) + .... + 2 + 1 => n(n
 최선의 경우 O(N)로, 다른 정렬 알고리즘의 일부로 사용될 만큼 좋은 정렬 알고리즘이다. 
 
 ## 예제 코드
-```
+```javascript
 var sortArray = function(nums) {
     for(let i = 1; i < nums.length; ++i) { // 1
         for(let j = i; j > 0; --j) {
@@ -111,7 +111,7 @@ var sortArray = function(nums) {
         }
     }
     return nums;
-};
+}
 ```
 1. 두 번째 원소부터 탐색
 2. 이전 위치(j-1)가 현재 위치(j) 보다 값이 크면 서로 값을 교환
@@ -143,13 +143,13 @@ Quick Sort는 피벗 값이 최소나 최대값으로 지정되어 파티션이 
 이런 상황에서는 피벗을 중간 값으로 선택하여 해결할 수 있다.
 
 ## 예제 코드
-```
+```javascript
 var sortArray = function(nums) {
     quickSort(nums);
     return nums;
-};
+}
 
-var quickSort = (nums, start = 0, end = nums.length-1) => {
+const quickSort = (nums, start = 0, end = nums.length-1) => {
     if(start >= end) return;
     
     let left = start, right = end;
@@ -167,8 +167,7 @@ var quickSort = (nums, start = 0, end = nums.length-1) => {
     // 6
     quickSort(nums, start, right); // 7
     quickSort(nums, left, end); // 7
-};
-};
+}
 ```
 1. 피벗을 중간값으로 선택
 2. 탐색하지 않은 값이 있을 때까지 탐색&교환(3,4,5)을 진행
@@ -200,7 +199,7 @@ Quick Sort는 서로 먼 거리에 있는 요소를 교환하면서 한번 선�
 병합정렬은 순차적인 비교로 정렬을 진행하므로, LinkedList의 정렬이 필요할 때 사용하면 효율적이다.
 
 ## 예제 코드
-```
+```javascript
 var sortArray = function(nums) { 
    if(nums.length < 2) return nums; // 1
    
@@ -210,7 +209,7 @@ var sortArray = function(nums) {
     return merge(left, right); // 3
 }
 
-var merge = (left, right) => { // 3
+const merge = (left, right) => { // 3
     let sorted = [];
     let iLeft = 0, iRight = 0;
     while(iLeft < left.length && iRight < right.length) { // 4
@@ -219,13 +218,13 @@ var merge = (left, right) => { // 3
     }
     
     return [...sorted,...left.slice(iLeft),...right.slice(iRight)];
-};
+}
 ```
 1. 배열의 길이가 1이하면 이미 정렬된 것으로 봄
 2. 정렬되지 않은 배열을 절반으로 잘라 두 배열로 나눔 (두 배열을 다시 재귀적으로 분할)
 3. 두 부분 배열을 다시 하나의 정렬된 배열로 합병
 4. shift함수를 사용할때보다 Runtime이 줄어듬 (252ms -> 100ms)
-```
+```javascript
 // shift 사용 예제
 while(left.length && right.length) {
         sorted.push((left[0] < right[0]) ? left.shift() : right.shift());
